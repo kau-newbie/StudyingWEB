@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SeeGugudanTable</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script>
+            // function fill_thecell(){
+            //     let t= document.createElement('div');
+            //     t.setAttribute('class', 'item-default');
+            //     return t;
+            // }
+            // function gugudan(x){
+            //     const t1= document.createElement('div');
+            //     t1.setAttribute('class', 'container');
+
+            //     var body=document.querySelector('body');
+            //     body.appendChild(t1);
+
+            //     var i=0;
+            //     while(i<x){
+            //         if(i>1){
+            //             var j=1;
+            //             var tmp=fill_thecell();
+            //             while(j<10){
+                            
+      
+            //                 tmp.insertAdjacentHTML('beforeend', i+'x'+j+'='+i*j+'<br>'); //= i+'x'+j+'='+i*j+'<br>';
+            //                 t1.appendChild(tmp);                            
+            //                 j=j+1;
+            //             }
+
+            //         }
+            //         i=i+1;
+            //     }
+
+                
+            // }
+
+            function fill_thecell(){
+                let t= document.createElement('div');
+                $(t).addClass('item-default');
+                return t;
+            }
+            function gugudan(x){
+                const t1= document.createElement('div');
+                $(t1).addClass('container');
+                $('body').append(t1);
+
+                var i=0;
+                while(i<x){
+                    if(i>1){
+                        var j=1;
+                        var tmp=fill_thecell();
+                        while(j<10){
+                            $(tmp).append(i+'x'+j+'='+i*j+'<br>');
+                            $(t1).append(tmp);                            
+                            j=j+1;
+                        }
+
+                    }
+                    i=i+1;
+                }
+
+                
+            }
+
+        </script>
+        <style>
+            .container {
+                display: grid;
+                border: 2px solid pink;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: repeat(4, 1fr);
+                place-items: center;
+                place-content: space-evenly;
+            } 
+            .item-default {
+                grid-area: auto;
+                justify-self: stretch;
+                align-self: center;
+                border: 2px solid pink;
+                padding: 4px;
+                gap:4px;
+            }
+        </style>
+    </head> 
+    <body>
+        <input id="gugudan" type="button" value="start" onclick="
+            gugudan(10)
+        ">
+    </body>
+</html>
