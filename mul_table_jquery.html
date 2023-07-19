@@ -42,7 +42,7 @@
                 $(t).addClass('item-default');
                 return t;
             }
-            function gugudan(x){
+            function gugudanfunc(x){
                 const t1= document.createElement('div');
                 $(t1).addClass('container');
                 $('body').append(t1);
@@ -86,8 +86,13 @@
         </style>
     </head> 
     <body>
-        <input id="gugudan" type="button" value="start" onclick="
-            gugudan(10)
-        ">
+        <input id="gugudan" type="button" value="start">
+        <script>
+            $('#gugudan').on(
+                'click', function(){
+                    gugudanfunc(10);
+                }
+            )
+        </script>
     </body>
 </html>
