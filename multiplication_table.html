@@ -9,7 +9,7 @@
                 t.setAttribute('class', 'item-default');
                 return t;
             }
-            function gugudan(x){
+            function gugudanfunc(x){
                 const t1= document.createElement('div');
                 t1.setAttribute('class', 'container');
 
@@ -23,7 +23,7 @@
                         var tmp=fill_thecell();
                         while(j<10){
                             
-                            
+      
                             tmp.insertAdjacentHTML('beforeend', i+'x'+j+'='+i*j+'<br>'); //= i+'x'+j+'='+i*j+'<br>';
                             t1.appendChild(tmp);                            
                             j=j+1;
@@ -32,6 +32,8 @@
                     }
                     i=i+1;
                 }
+
+                //$('a') 
             }
         </script>
         <style>
@@ -55,7 +57,7 @@
     </head> 
     <body>
         <input id="gugudan" type="button" value="start" onclick="
-            gugudan(10)
+            gugudanfunc(10)
         ">
     
     </body>
