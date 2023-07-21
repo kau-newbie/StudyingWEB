@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <title>ahoh</title>
+    <style>
+        .container{
+            display: grid;
+            border: 2px solid paleturquoise;
+            place-items: center;
+            /* justify-content: stretch; */ /* Remove this line */
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .items{
+            grid-area: auto;
+            justify-self: center;
+            align-self: center;
+        }
+
+        .alarmin_grid{
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: grid;
+            width: 10%;
+            height: 30%;
+            place-items: center;
+            row-gap: 2px;
+            align-content: start;
+        }
+
+        .alarmin {
+            position: relative;
+            background-color: lightyellow;
+            border: 1px solid gray;
+            padding: 10px;
+            display: none;
+            z-index: 9999;
+            overflow: visible;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            //making grid container
+            const t1= $('<div>').addClass('container');
+            $('body').append(t1);
+
+            //making grid for alarmbox
+            const t2= $('<div>').addClass('alarmin_grid');
+            $('body').append(t2);
+
+            //making button
+            let b1=$('<input>').attr({type:'button', id:'button1', value:'click!'})
+                .addClass('items')
+                .css({width: '100px', height:'50px'})
+                .on('click', function(){
+                    //call alert function
+                    alarm_auto();
+                });
+            $(t1).append(b1);
+
+            //alert
+            
+            function alarm_auto(){
+                if(($('.alarmin').length) < 3){
+                    $('<div>').addClass('alarmin')
+                    .appendTo('.alarmin_grid')
+                    .text("i'm an alert box.")
+                    .fadeIn('slow')
+                    .delay(3000)
+                    .fadeOut(200, function(){
+                        $(this).remove();
+                    });
+                }
+                else{
+                    alert('too many alertboxes. please wait just few minutes....');
+                }
+            }
+            
+        });
+    </script>
+</body>
+</html>
