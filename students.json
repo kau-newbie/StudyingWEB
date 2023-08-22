@@ -1,5 +1,17 @@
-{
-    "name": "doremi",
-    "major": "CS",
-    "grade": 2
-}
+[
+    {
+        "name": "doremi",
+        "major": "CS",
+        "grade": 2
+    },
+    {
+        "name": "baek",
+        "major": "philosophy",
+        "grade": 1
+    },
+    {
+        "name": "hong",
+        "major": "korean",
+        "grade": 2
+    }
+]

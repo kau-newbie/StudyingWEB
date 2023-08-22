@@ -3,6 +3,28 @@
     <head>
         <title></title>
         <meta charset="utf-8">
+
+        <style>
+            .container{
+                display: grid;
+                width: 100vw;
+                height: 100vh;
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows: repeat(row_num, 1fr);
+            }
+            .items{
+                border: 2px solid black;
+                justify-self: stretch;
+                align-content: center;
+            }
+            h2{
+                margin-left: 2%;
+            }
+            h2 hr{
+                border: none;
+            }
+        </style>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js">
         </script>
         <script src="req.js"></script>
